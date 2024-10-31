@@ -1,8 +1,13 @@
-# CISC/CMPE 204 Modelling Project
+# CISC/CMPE 204 Modelling Project 09: Winning UNO
 
-Welcome to the major project for CISC/CMPE 204!
+This project models a simulation of a well-known card game, UNO. In this version of UNO, the player starts with 7 cards in their hand and must play one of these cards depending on the previously played card (i.e. the top card). This is determined through the colour and number of the top card. A card is playable if one of the following holds:
+- The colour of the card matches the colour of the top card;
+- The number of the card matches the number of the top card; or
+- They have a wildcard, in which case they can choose to change the current colour of the top card.
 
-Change this README.md file to summarize your project, and provide pointers to the general structure of the repository. How you organize and build things (which files, how you structure things, etc) is entirely up to you! The only things you must keep in place are what is already listed in the **Structure** section below.
+Otherwise, the player must draw another card from a pile.
+
+The objective of this game is to get rid of all of the player's cards, which is something the code will determine.
 
 ## Structure
 
