@@ -12,7 +12,7 @@ class BasicPropositions:
     def __init__(self, data):
         self.data = data
 
-    def prop_name(self):
+    def _prop_name(self):
         return f"A.{self.data}"
 # Define basic propositions for the Uno game
 C = BasicPropositions("C")  # Previous card and the card in players hand have the same colour
@@ -40,7 +40,7 @@ class FancyProposition:
         return f"Playable.{self.data}"
 
 x = FancyProposition("x")
-def uno_constraints():
+def example_theory():
     
     # Add constraints for the playable condition
     E.add_constraint(B >> (C | T))                # B implies C or T
@@ -57,19 +57,20 @@ def uno_constraints():
     return E
 
 if __name__ == "__main__":
-
-    T = uno_constraints()
-    # Don't compile until you're finished adding all your constraints!
-    T = T.compile()
-    # After compilation (and only after), you can check some of the properties
-    # of your model:
+    T = example_theory()  # Set up constraints
+    T = T.compile()       # Compile the theory
+    
+    # Check properties of the model
     print("\nSatisfiable: %s" % T.satisfiable())
     print("# Solutions: %d" % count_solutions(T))
     print("   Solution: %s" % T.solve())
-
+    
     print("\nVariable likelihoods:")
-    for v,vn in zip([C,T,B,E2,F,R,S,U,W,A,D], 'abcxyz'):
-        # Ensure that you only send these functions NNF formulas
-        # Literals are compiled to NNF here
-        print(" %s: %.2f" % (vn, likelihood(T, v)))
-    print()
+    for v, vn in zip(prop, [C, T, B, E2, F, R, S, U, W, A, D, x]):
+        try:
+            likelihood_value = likelihood(T, v)
+            print(" %s: %.2f" % (vn, likelihood_value))
+        except ZeroDivisionError:
+            print(" %s: Division by zero" % vn)
+        except Exception as e:
+            print(" %s: Error calculating likelihood (%s)" % (vn, e))
