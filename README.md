@@ -15,6 +15,8 @@ Additionally, UNO has certain action cards:
 
 The objective of this game is to get rid of all of one’s cards first, which is something the code will determine. However, in our model, we will deem the sequence of play satisfiable and the game ended as long as the player loses all of their cards at the end.
 
+If further clarification on the rules is needed, a more detailed overview of the game can be found here: https://en.wikipedia.org/wiki/Uno_(card_game)
+
 ## Structure
 
 * `documents`: Contains folders for both of our draft and final submissions. README.md files are included in both.
