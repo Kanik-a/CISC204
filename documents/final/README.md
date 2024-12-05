@@ -1,9 +1,6 @@
 # Modelling Project Final Submission
 
-This folder should contain the extra documents for the deliverables (D3) - (D5)
+This folder contains our final, polished submission! Here, you can find the following:
 
-## Expected Items
-
-* *this repository*: We will download the most recent version of your project (including this folder) on the due date.
-* `proofs.jp`: Jape file containing sequents, as well as their proofs.
-* `modelling_report.docx` or (`report.txt` and `report.pdf`): Include either the Word document for your documentation, or a link to the OverLeaf project inside of `report.txt` if that is what you chose to use for (D5). If you are using OverLeaf, include a compiled version here as `report.pdf`.
+* `204 final.j`: A series of Jape proofs that demonstrates the logic behind our propositions and constraints.
+* `Group_9__Modelling_Project.pdf`: Documentation to aid in a more visual and neat understanding of our project. 
